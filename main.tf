@@ -7,7 +7,7 @@ module "vm" {
   # rg = module.rg["uksouth"].rgout
   rgname1 = try (module.rg[each.key].rgout, null)
 
-
+# this line modified to null if there is no new resource group)
 
 
 }

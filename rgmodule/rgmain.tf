@@ -4,3 +4,6 @@ resource "azurerm_resource_group" "rg" {
   name     = each.value.name
   location = var.location
 }
+
+
+#this block has been modified to kick in only when the resource group is defined in tfvars

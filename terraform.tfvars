@@ -8,8 +8,8 @@ virtual_machines = {
       vmsize   = "Standard_B1s"
       rg_key   = "rg01"
       os_type  = "windows"
-      # rgvalue  = "rg01"
-        existingrg ="ibo-rg"
+      rgvalue  = "rg01"
+        # existingrg ="ibo-rg"
 
       os_disk = {
         disk_size_gb         = 40
@@ -50,8 +50,8 @@ virtual_machines = {
       vmsize   = "Standard_B1s"
       rg_key   = "rg01"
       os_type  = "windows"
-        # rgvalue  = "rg01"
-      existingrg = "ibo-rg"
+        rgvalue  = "rg01"
+      # existingrg = "ibo-rg"
 
       os_disk = {
         disk_size_gb         = 40
@@ -92,8 +92,8 @@ virtual_machines = {
       vmsize   = "Standard_B1s"
       rg_key   = "rg01"
       os_type  = "windows"
-        # rgvalue  = "rg01"
-      existingrg = "ibo-rg1"
+        rgvalue  = "rg01"
+      # existingrg = "ibo-rg1"
 
       os_disk = {
         disk_size_gb         = 40
@@ -136,8 +136,8 @@ virtual_machines = {
       vmsize   = "Standard_B1s"
       rg_key   = "rg01"
       os_type  = "windows"
-      # rgvalue  = "rg01"
-        existingrg ="ibo-gwc-vnet"
+      rgvalue  = "rg01"
+        # existingrg ="ibo-gwc-vnet"
 
       os_disk = {
         disk_size_gb         = 40
@@ -176,14 +176,14 @@ virtual_machines = {
 
 resgrp = {
 
-  # uksouth = {
-  #   # rg01 = {
-  #   #   name = "computeint-01"
-  #   # }
-  # }
-  # germanywestcentral = {
-  #   # rg01 = {
-  #   #   name = "computeint-gwc-01"
-  #   # }
-  # }
+  uksouth = {
+    rg01 = {
+      name = "computeint-01"
+    }
+  }
+  germanywestcentral = {
+    rg01 = {
+      name = "computeint-gwc-01"
+    }
+  }
 }

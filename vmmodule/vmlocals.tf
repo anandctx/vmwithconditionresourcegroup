@@ -64,6 +64,9 @@ locals {
 
 }
 
+# this block is written in such a way that the based on the value given in tfvars, it tries to map
+# the resource gorup to data block existing rg or it maps to the new resource group
+
 
 
 
