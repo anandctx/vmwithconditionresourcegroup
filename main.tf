@@ -20,11 +20,13 @@ module "rg" {
 
 }
 
-output "out_1" {
-  value = module.vm["uksouth"].out_1
-}
+# module "location" {
+#   source = "./location"
+#   location = var.location
+# desc = this module shold not be caled here as it is expecting the value for var.location
+# }
 
-output "out_2" {
-  value = module.vm["uksouth"].nicname
-}
+
+
+
 

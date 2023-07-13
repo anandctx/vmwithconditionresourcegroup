@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"rg","Source":"./rgmodule","Dir":"rgmodule"},{"Key":"vm","Source":"./vmmodule","Dir":"vmmodule"}]}
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"location","Source":"./location","Dir":"location"},{"Key":"rg","Source":"./rgmodule","Dir":"rgmodule"},{"Key":"vm","Source":"./vmmodule","Dir":"vmmodule"},{"Key":"vm.location","Source":"C:/newvm112/location","Dir":".terraform/modules/vm.location"}]}

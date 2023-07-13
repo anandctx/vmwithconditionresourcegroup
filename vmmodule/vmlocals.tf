@@ -14,7 +14,7 @@ locals {
       offer         = try(b.source_image_reference.offer, "WindowsServer")
       sku           = try(b.source_image_reference.sku, "2019-datacenter-gensecond")
       version       = try(b.source_image_reference.version, "latest")
-      nicname       = "${b.vmnumber}-${b.id}-${var.location}-${c}"
+      nicname       = "${b.vmnumber}-${b.id}-${module.location.locshort}-${c}"
       subnetname    = d.subnetname
       vnetname      = b.vnetname
       rgname        = b.rgname
@@ -32,7 +32,7 @@ locals {
   vm = flatten([for a, b in var.vm :
     {
 
-      vmname        = "${b.vmnumber}-${b.id}-${local.location}-v"
+      vmname        = "${b.vmnumber}${b.id}${module.location.locshort}v"
       size          = try(b.vmsize, "Standard_F2")
       location = local.location
       adminusername = try(b.adminusername, "vmadmin")
@@ -51,7 +51,7 @@ locals {
       # the module resource group..
 
 
-      networkint = [for c, d in b.networking_interfaces : azurerm_network_interface.nic["${b.vmnumber}-${b.id}-${local.location}-${c}"].id]
+      networkint = [for c, d in b.networking_interfaces : azurerm_network_interface.nic["${b.vmnumber}-${b.id}-${module.location.locshort}-${c}"].id]
 
   }])
 
