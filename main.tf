@@ -5,7 +5,7 @@ module "vm" {
   location = each.key
   vm       = each.value
   # rg = module.rg["uksouth"].rgout
-  rgname1 = module.rg[each.key].rgout
+  rgname1 = try (module.rg[each.key].rgout, null)
 
 
 

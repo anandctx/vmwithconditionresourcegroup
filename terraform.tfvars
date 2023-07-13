@@ -176,14 +176,14 @@ virtual_machines = {
 
 resgrp = {
 
-  uksouth = {
-    rg01 = {
-      name = "computeint-01"
-    }
-  }
-  germanywestcentral = {
-    rg01 = {
-      name = "computeint-gwc-01"
-    }
-  }
+  # uksouth = {
+  #   # rg01 = {
+  #   #   name = "computeint-01"
+  #   # }
+  # }
+  # germanywestcentral = {
+  #   # rg01 = {
+  #   #   name = "computeint-gwc-01"
+  #   # }
+  # }
 }
