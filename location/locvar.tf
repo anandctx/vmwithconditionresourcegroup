@@ -13,5 +13,5 @@ variable "location_short" {
 }
 
 variable "location" {
-  
+
 }

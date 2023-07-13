@@ -18,8 +18,9 @@ locals {
       subnetname    = d.subnetname
       vnetname      = b.vnetname
       rgname        = b.rgname
-      vmrg = try(var.rgname1[b.rgvalue].name, data.azurerm_resource_group.rg[b.existingrg].name)
-      location = local.location
+      # vmrg          = try(var.rgname1[b.rgvalue].name, data.azurerm_resource_group.rg[b.existingrg].name)
+      vmrg          = try(var.rgname1[b.rgvalue].name, data.azurerm_resource_group.rg["${b.existingrg}-${b.vmnumber}"].name)
+      location      = local.location
 
 
     }]
@@ -34,7 +35,7 @@ locals {
 
       vmname        = "${b.vmnumber}${b.id}${module.location.locshort}v"
       size          = try(b.vmsize, "Standard_F2")
-      location = local.location
+      location      = local.location
       adminusername = try(b.adminusername, "vmadmin")
       adminpassword = try(b.adminpassword, "Unilever@123")
       osdiskcaching = try(b.os_disk.caching, "ReadWrite")
@@ -45,7 +46,9 @@ locals {
       # version       = try(b.source_image_reference.version, "latest")
       sourceimage = try(b.source_image_reference, null)
 
-      vmrg = try(var.rgname1[b.rgvalue].name, data.azurerm_resource_group.rg[b.existingrg].name)
+      # vmrg = try(var.rgname1[b.rgvalue].name, data.azurerm_resource_group.rg[b.existingrg].name)
+
+      vmrg = try(var.rgname1[b.rgvalue].name, data.azurerm_resource_group.rg["${b.existingrg}-${b.vmnumber}"].name)
 
       # the value for resource group , here var.rg1's answer is given in the root module where it is the output from
       # the module resource group..

@@ -20,10 +20,10 @@ resource "azurerm_windows_virtual_machine" "vm" {
   #   sku       = each.value.offer
   #   version   = each.value.version
   # }
-  
+
   source_image_reference {
 
-  publisher = try(each.value.sourceimage.publisher, "center-for-internet-security-inc")
+    publisher = try(each.value.sourceimage.publisher, "center-for-internet-security-inc")
     offer     = try(each.value.sourceimage.offer, "cis-windows-server-2022-l2")
     sku       = try(each.value.sourceimage.sku, "cis-windows-server-2022-l2-gen2")
     version   = try(each.value.sourceimage.version, "latest")
