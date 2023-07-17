@@ -6,4 +6,4 @@ variable "vm" {}
 
 variable "rgname1" {}
 
-# variable "rg" {}
+variable "rgname2" {}

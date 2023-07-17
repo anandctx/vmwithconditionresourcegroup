@@ -21,6 +21,7 @@ locals {
       # vmrg          = try(var.rgname1[b.rgvalue].name, data.azurerm_resource_group.rg[b.existingrg].name)
       vmrg          = try(var.rgname1[b.rgvalue].name, data.azurerm_resource_group.rg["${b.existingrg}-${b.vmnumber}"].name)
       location      = local.location
+     parentid = var.rgname2[b.rgvalue].id
 
 
     }]
@@ -45,6 +46,7 @@ locals {
       # sku           = try(b.source_image_reference.sku, "2016-datacenter-gensecond")
       # version       = try(b.source_image_reference.version, "latest")
       sourceimage = try(b.source_image_reference, null)
+      zone = try (b.zone, null)
 
       # vmrg = try(var.rgname1[b.rgvalue].name, data.azurerm_resource_group.rg[b.existingrg].name)
 
