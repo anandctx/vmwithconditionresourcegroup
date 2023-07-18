@@ -12,7 +12,7 @@ locals {
     {
       name     = try(b.name, null)
       key      = a
-      location = local.location
+      # location = local.location
       # id = azurerm_resource_group.rg[a].id
       # id = "/subscriptions/6e54aa79-9b0b-40ed-ae27-91fdffa0a565/resourceGroups/${b.name}"
     }
