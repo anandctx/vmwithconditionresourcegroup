@@ -17,17 +17,17 @@
 # }
 
 
-output "rgid2" {
-  value = module.rg["uksouth"].rgid
-}
+# output "rgid2" {
+#   value = module.rg["uksouth"].rgid
+# }
 
-output "rgid3" {
-  value = [for a, b in var.resgrp : module.rg[a].rgid]
-}
+# output "rgid3" {
+#   value = [for a, b in var.resgrp : module.rg[a].rgid]
+# }
 
-output "newrgid" {
-  value = module.rg["uksouth"].newrgid
-}
+# output "newrgid" {
+#   value = module.rg["uksouth"].newrgid
+# }
 # output "rg4" {
 #   value = module.rg["uksouth"].rg4
 # }

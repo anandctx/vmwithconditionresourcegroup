@@ -50,7 +50,7 @@ virtual_machines = {
       vmsize   = "Standard_B1s"
       rg_key   = "rg02"
       os_type  = "windows"
-        rgvalue  = "rg02"
+      rgvalue  = "rg02"
       # existingrg = "ibo-rg"
 
       os_disk = {
@@ -137,8 +137,8 @@ virtual_machines = {
   #     vmsize   = "Standard_B1s"
   #     rg_key   = "rg01"
   #     os_type  = "windows"
-  #     rgvalue  = "rg01"
-  #       # existingrg ="ibo-gwc-vnet"
+  #     # rgvalue  = "rg01"
+  #       existingrg ="ibo-gwc-vnet"
   #       zone = "3"
 
   #     os_disk = {
