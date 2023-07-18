@@ -21,7 +21,7 @@ locals {
       # vmrg          = try(var.rgname1[b.rgvalue].name, data.azurerm_resource_group.rg[b.existingrg].name)
       vmrg     = try(var.rgname1[b.rgvalue].name, data.azurerm_resource_group.rg["${b.existingrg}-${b.vmnumber}"].name)
       location = local.location
-      parentid = var.rgname1[b.rgvalue].id
+      parentid = try (var.rgname1[b.rgvalue].id, data.azurerm_resource_group.rg["${b.existingrg}-${b.vmnumber}"].id)
 
 
     }]

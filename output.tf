@@ -33,7 +33,7 @@
 # }
 
 output "rg15" {
-  value = module.rg["uksouth"].rg15
+  value = try (module.rg["uksouth"].rg15, null)
 }
 
 
