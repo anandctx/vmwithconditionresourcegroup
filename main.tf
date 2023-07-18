@@ -5,13 +5,14 @@ module "vm" {
   location = each.key
   vm       = each.value
   # rg = module.rg["uksouth"].rgout
-  rgname1 = try (module.rg[each.key].rgout, null)
-  rgname2 = module.rg[each.key].rg4
- 
+  rgname1 = try(module.rg[each.key].rg15, null)
+  # rgname2 = try( module.rg[each.key].rg15, null)
+  #  rgname2 = module.rg[each.key].rg15
 
- 
 
-  }
+
+
+}
 
 # this line modified to null if there is no new resource group)
 

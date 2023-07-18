@@ -11,13 +11,17 @@ output "rgid" {
 output "newrgid" {
   value = flatten([for a, b in local.rg2 :
     {
-      name = try (b.name,null)
+      name = try(b.name, null)
       key  = a
-       id = azurerm_resource_group.rg[a].id
+      id   = azurerm_resource_group.rg[a].id
     }
   ])
 }
 
-output "rg4" {
-  value = local.rg4
+# output "rg4" {
+#   value = local.rg4
+# }
+
+output "rg15" {
+  value = { for a in local.rg14 : a.key => a }
 }

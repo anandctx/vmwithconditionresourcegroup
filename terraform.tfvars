@@ -9,7 +9,7 @@ virtual_machines = {
       rg_key   = "rg01"
       os_type  = "windows"
       rgvalue  = "rg01"
-        # existingrg ="ibo-rg"
+      # existingrg ="ibo-rg"
 
       os_disk = {
         disk_size_gb         = 40
@@ -48,7 +48,7 @@ virtual_machines = {
       id       = "t"
       vmnumber = "02"
       vmsize   = "Standard_B1s"
-      rg_key   = "rg01"
+      rg_key   = "rg02"
       os_type  = "windows"
         rgvalue  = "rg02"
       # existingrg = "ibo-rg"
@@ -85,49 +85,49 @@ virtual_machines = {
 
       }
     }
-    iamvm03 = {
+    # iamvm03 = {
 
-      id       = "t"
-      vmnumber = "03"
-      vmsize   = "Standard_B1s"
-      rg_key   = "rg01"
-      os_type  = "windows"
-        rgvalue  = "rg01"
-      # existingrg = "ibo-rg1"
-      # zone = "1"
+    #   id       = "t"
+    #   vmnumber = "03"
+    #   vmsize   = "Standard_B1s"
+    #   rg_key   = "rg01"
+    #   os_type  = "windows"
+    #     rgvalue  = "rg01"
+    #   # existingrg = "ibo-rg1"
+    #   # zone = "1"
 
-      os_disk = {
-        disk_size_gb         = 40
-        caching              = "ReadWrite"
-        storage_account_type = "Standard_LRS"
-      }
+    #   os_disk = {
+    #     disk_size_gb         = 40
+    #     caching              = "ReadWrite"
+    #     storage_account_type = "Standard_LRS"
+    #   }
 
-      source_image_reference = {
-        publisher = "MicrosoftWindowsServer"
-        offer     = "windowsserver"
-        sku       = "2016-Datacenter-gensecond"
-        version   = "14393.6085.230705"
-      }
-
-
-      rgname   = "ibo-rg"
-      vnetname = "ibo-01-vnet"
-
-      networking_interfaces = {
-        nic01 = {
-          subnetname = "ibo-01-subnet"
-          #dns_servers = []
-        }
-
-        # nic02 = {
-        #   subnetname = "ibo-01-subnet"
-        #   #dns_servers = []
-        # }
+    #   source_image_reference = {
+    #     publisher = "MicrosoftWindowsServer"
+    #     offer     = "windowsserver"
+    #     sku       = "2016-Datacenter-gensecond"
+    #     version   = "14393.6085.230705"
+    #   }
 
 
+    #   rgname   = "ibo-rg"
+    #   vnetname = "ibo-01-vnet"
 
-      }
-    }
+    #   networking_interfaces = {
+    #     nic01 = {
+    #       subnetname = "ibo-01-subnet"
+    #       #dns_servers = []
+    #     }
+
+    #     # nic02 = {
+    #     #   subnetname = "ibo-01-subnet"
+    #     #   #dns_servers = []
+    #     # }
+
+
+
+    #   }
+    # }
   }
   # germanywestcentral = {
   #   iamvm01 = {
@@ -185,9 +185,9 @@ resgrp = {
     rg02 = {
       name = "computeinteger-01"
     }
-    rg03 = {
-      name = "computeext-01"
-    }
+    # rg03 = {
+    #   name = "computeext-01"
+    # }
   }
   # germanywestcentral = {
   #   rg01 = {
@@ -198,4 +198,4 @@ resgrp = {
   #   rg01 = {
   #     name = "computeint-eastus2-01"
   #   }
-  }
+}

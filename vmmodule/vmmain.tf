@@ -7,7 +7,7 @@ resource "azurerm_windows_virtual_machine" "vm" {
   admin_username        = each.value.adminusername
   admin_password        = each.value.adminpassword
   network_interface_ids = each.value.networkint
-  zone = each.value.zone
+  zone                  = each.value.zone
 
   os_disk {
     caching              = each.value.osdiskcaching
@@ -28,4 +28,8 @@ resource "azurerm_windows_virtual_machine" "vm" {
     sku       = try(each.value.sourceimage.sku, "cis-windows-server-2022-l2-gen2")
     version   = try(each.value.sourceimage.version, "latest")
   }
+
+  # lifecycle {
+  #   ignore_changes = [ resource_group_name ]
+  # }
 }

@@ -12,7 +12,7 @@ resource "azurerm_network_interface" "nic" {
 
   }
 
-    lifecycle {
+  lifecycle {
 
     create_before_destroy = true
     ignore_changes = [
