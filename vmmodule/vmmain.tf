@@ -30,6 +30,7 @@ resource "azurerm_windows_virtual_machine" "vm" {
   }
 
   # lifecycle {
-  #   ignore_changes = [ resource_group_name ]
+  #   ignore_changes = [ admin_username]
   # }
+
 }

@@ -36,5 +36,20 @@ output "rg15" {
   value = try (module.rg["uksouth"].rg15, null)
 }
 
+output "vmsout1" {
+  description = "The list of virtual machines created by the module"
+  value       = module.vm["uksouth"].vmchildout
+}
+
+# output "vmsout2" {
+#   description = "The list of virtual machines created by the module"
+#   value       = {for a, b in module.vm : a=>b.vmchildout.name}
+# }
+
+# output "rgiid" {
+#   value = module.rg["uksouth"].rgid002
+# }
+
+
 
 
