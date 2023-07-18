@@ -21,7 +21,7 @@ locals {
       # vmrg          = try(var.rgname1[b.rgvalue].name, data.azurerm_resource_group.rg[b.existingrg].name)
       vmrg     = try(var.rgname1[b.rgvalue].name, data.azurerm_resource_group.rg["${b.existingrg}-${b.vmnumber}"].name)
       location = local.location
-      # parentid = try (var.rgname2[b.rgvalue].id, data.azurerm_resource_group.rg["${b.existingrg}-${b.vmnumber}"].id)
+      parentid = try (var.rgname2[b.rgvalue].id, data.azurerm_resource_group.rg["${b.existingrg}-${b.vmnumber}"].id)
 
 
     }]
@@ -57,7 +57,7 @@ locals {
 
 
       networkint = [for c, d in b.networking_interfaces : azurerm_network_interface.nic["${b.vmnumber}-${b.id}-${module.location.locshort}-${c}"].id]
-
+# /subscriptions/6e54aa79-9b0b-40ed-ae27-91fdffa0a565/resourceGroups/ibo-rg/providers/Microsoft.Network/networkInterfaces/sdfas
   }])
 
   location = var.location

@@ -26,9 +26,9 @@ output "rg15" {
   value = { for a in local.rg14 : a.key => a }
 }
 
-# output "rg16" {
-#   value = { for a in local.rg16 : a.key => a }
-# } If this is uncommented, there is an issue with the resource group where the vm does not 
+output "rg16" {
+  value = { for a in local.rg16 : a.key => a }
+} #If this is uncommented, there is an issue with the resource group where the vm does not 
 # know the resource group as local.rg16 is having resource group id ... 
 # also it creates an issue where already existing vm gets recreated when new vm is added to tfvars
 

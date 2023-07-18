@@ -6,7 +6,7 @@ module "vm" {
   vm       = each.value
   # rg = module.rg["uksouth"].rgout
   rgname1 = try(module.rg[each.key].rg15, null)
-  # rgname2 = try( module.rg[each.key].rg16, null)
+  rgname2 = try( module.rg[each.key].rg16, null)
   #  rgname2 = module.rg[each.key].rg15
 
   # depends_on = [ module.rg ]

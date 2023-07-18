@@ -3,6 +3,10 @@ resource "azurerm_resource_group" "rg" {
   for_each = { for a in local.rg14 : a.key => a if a.key != null }
   name     = each.value.name
   location = var.location
+
+  lifecycle {
+    ignore_changes = [ id ]
+  }
 }
 
 
