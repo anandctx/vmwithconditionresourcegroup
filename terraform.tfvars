@@ -88,14 +88,13 @@ virtual_machines = {
     }
     # iamvm03 = {
 
-    #   id       = "t"
-    #   vmnumber = "03"
-    #   vmsize   = "Standard_B1s"
-    #   rg_key   = "rg01"
-    #   os_type  = "windows"
-    #     rgvalue  = "rg02"
-    #   # existingrg = "ibo-rg1"
-    #   # zone = "1"
+      id       = "t"
+      vmnumber = "03"
+      vmsize   = "Standard_B1s"
+      rg_key   = "rg01"
+      os_type  = "windows"
+      #   rgvalue  = "rg01"
+      existingrg = "ibo-rg1"
 
     #   os_disk = {
     #     disk_size_gb         = 40
