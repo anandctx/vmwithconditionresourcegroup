@@ -10,3 +10,7 @@ variable "resgrp" {
 variable "location" {
   default = ""
 }
+
+variable "adminusername" {
+ 
+}

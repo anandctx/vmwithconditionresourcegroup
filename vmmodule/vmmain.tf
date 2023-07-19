@@ -4,7 +4,7 @@ resource "azurerm_windows_virtual_machine" "vm" {
   resource_group_name   = each.value.vmrg
   location              = local.location
   size                  = each.value.size
-  admin_username        = each.value.adminusername
+  admin_username        = var.adminusername
   admin_password        = each.value.adminpassword
   network_interface_ids = each.value.networkint
   zone                  = each.value.zone

@@ -7,3 +7,5 @@ variable "vm" {}
 variable "rgname1" {}
 
 # variable "rgname2" {}
+
+variable "adminusername" {}

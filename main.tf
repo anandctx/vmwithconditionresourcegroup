@@ -8,6 +8,7 @@ module "vm" {
   rgname1 = try(module.rg[each.key].rg15, null)
   # rgname2 = try( module.rg[each.key].rg15, null)
   #  rgname2 = module.rg[each.key].rg15
+  adminusername = var.adminusername
 
 
 
