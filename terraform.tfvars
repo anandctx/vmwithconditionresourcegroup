@@ -50,8 +50,8 @@ virtual_machines = {
       vmsize   = "Standard_B1s"
       rg_key   = "rg02"
       os_type  = "windows"
-      # rgvalue  = "rg01"
-      existingrg = "ibo-rg"
+      rgvalue  = "rg01"
+      # existingrg = "ibo-rg"
 
       os_disk = {
         disk_size_gb         = 40
@@ -181,9 +181,11 @@ resgrp = {
   uksouth = {
     rg01 = {
       name = "computeint-01"
+      # existingrg = "ibo-rg"
     }
     rg02 = {
-      name = "computeinteger-01"
+      # name = "computeinteger-01"
+      existingrg = "ibo-rg"
     }
     # rg03 = {
     #   name = "computeext-01"

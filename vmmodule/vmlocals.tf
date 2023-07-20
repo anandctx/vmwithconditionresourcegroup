@@ -19,9 +19,10 @@ locals {
       vnetname      = b.vnetname
       rgname        = b.rgname
       # vmrg          = try(var.rgname1[b.rgvalue].name, data.azurerm_resource_group.rg[b.existingrg].name)
-      vmrg     = try(var.rgname1[b.rgvalue].name, data.azurerm_resource_group.rg["${b.existingrg}-${b.vmnumber}"].name)
+      vmrg     = try(var.rgname1[b.rgvalue].name, null) == null ? var.rgname2[b.rgvalue].name : var.rgname1[b.rgvalue].name
+      # vmdatarg = try(var.rgname1[b.rgvalue].existingrg, null)
       location = local.location
-      parentid = try (var.rgname1[b.rgvalue].id, data.azurerm_resource_group.rg["${b.existingrg}-${b.vmnumber}"].id)
+      # parentid = try (var.rgname1[b.rgvalue].id, data.azurerm_resource_group.rg["${b.existingrg}-${b.vmnumber}"].id)
 
 
     }]
@@ -50,7 +51,7 @@ locals {
 
       # vmrg = try(var.rgname1[b.rgvalue].name, data.azurerm_resource_group.rg[b.existingrg].name)
 
-      vmrg = try(var.rgname1[b.rgvalue].name, data.azurerm_resource_group.rg["${b.existingrg}-${b.vmnumber}"].name)
+      vmrg = try(var.rgname1[b.rgvalue].name, null) == null ? var.rgname2[b.rgvalue].name : var.rgname1[b.rgvalue].name
 
       # the value for resource group , here var.rg1's answer is given in the root module where it is the output from
       # the module resource group..

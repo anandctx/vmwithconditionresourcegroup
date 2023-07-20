@@ -32,9 +32,16 @@
 #   value = module.rg["uksouth"].rg4
 # }
 
-output "rg15" {
-  value = try (module.rg["uksouth"].rg15, null)
+output "newrg" {
+  value = try (module.rg["uksouth"].newrg, null)
 }
+
+output "existrg" {
+  value = try (module.rg["uksouth"].existrg, null)
+}
+
+
+
 
 
 

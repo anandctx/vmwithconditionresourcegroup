@@ -22,6 +22,13 @@
 #   value = local.rg4
 # }
 
-output "rg15" {
-  value = { for a in local.rg14 : a.key => a }
+output "newrg" {
+  value = { for a in local.rg14 : a.key => a if a.name!=null }
 }
+output "existrg" {
+  value = { for a in local.datargver1: a.key => a if a.name!=null }
+}
+
+# output "existrg" {
+#   value = { for a in var.rg: a.name => a if a.name!=null }
+# }

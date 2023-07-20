@@ -5,7 +5,8 @@ module "vm" {
   location = each.key
   vm       = each.value
   # rg = module.rg["uksouth"].rgout
-  rgname1 = try(module.rg[each.key].rg15, null)
+  rgname1 = module.rg[each.key].newrg
+  rgname2 = module.rg[each.key].existrg
   # rgname2 = try( module.rg[each.key].rg15, null)
   #  rgname2 = module.rg[each.key].rg15
 
