@@ -32,6 +32,7 @@ locals {
     {
       name = try(b.existingrg, null)
       key  = a
+      key2 = try (b.existingrg, null)
       # location = local.location
       # id = azurerm_resource_group.rg[a].id
       id = try("/subscriptions/6e54aa79-9b0b-40ed-ae27-91fdffa0a565/resourceGroups/${b.existingrg}", null)
