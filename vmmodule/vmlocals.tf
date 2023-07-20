@@ -22,7 +22,7 @@ locals {
       vmrg = try(var.rgname1[b.rgvalue].name, null) == null ? var.rgname2[b.rgvalue].name : var.rgname1[b.rgvalue].name
       # vmdatarg = try(var.rgname1[b.rgvalue].existingrg, null)
       location = local.location
-      # parentid = try (var.rgname1[b.rgvalue].id, data.azurerm_resource_group.rg["${b.existingrg}-${b.vmnumber}"].id)
+      parentid = try(var.rgname1[b.rgvalue].id, null) == null ? var.rgname2[b.rgvalue].id : var.rgname1[b.rgvalue].id
 
 
     }]
