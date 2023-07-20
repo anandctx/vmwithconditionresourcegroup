@@ -9,3 +9,12 @@ output "nicname" {
 # output "rgout2" {
 #   value = { for a in local.rgexist : a.key => a if a.name != null }
 # }
+
+output "vmdetails" {
+  value = [
+    for vm in azurerm_windows_virtual_machine.vm : {
+      name           = vm.name
+      resource_group = vm.resource_group_name
+    }
+  ]
+}

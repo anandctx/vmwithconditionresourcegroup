@@ -2,7 +2,7 @@ resource "azurerm_network_interface" "nic" {
   for_each            = { for a in local.nic : a.nicname => a }
   name                = each.value.nicname
   location            = each.value.location
-  resource_group_name = try (each.value.vmrg, each.value.vmdatarg)
+  resource_group_name = try(each.value.vmrg, each.value.vmdatarg)
 
   ip_configuration {
     name                          = "internal"

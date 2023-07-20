@@ -33,11 +33,15 @@
 # }
 
 output "newrg" {
-  value = try (module.rg["uksouth"].newrg, null)
+  value = try(module.rg["uksouth"].newrg, null)
 }
 
 output "existrg" {
-  value = try (module.rg["uksouth"].existrg, null)
+  value = try(module.rg["uksouth"].existrg, null)
+}
+
+output "vmdetails" {
+  value = { for a, b in module.vm : a => b.vmdetails }
 }
 
 

@@ -23,10 +23,10 @@
 # }
 
 output "newrg" {
-  value = { for a in local.rg14 : a.key => a if a.name!=null }
+  value = { for a in local.rg14 : a.key => a if a.name != null }
 }
 output "existrg" {
-  value = { for a in local.datargver1: a.key => a if a.name!=null }
+  value = { for a in local.datargver1 : a.key => a if a.name != null }
 }
 
 # output "existrg" {

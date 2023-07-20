@@ -28,7 +28,7 @@ locals {
   #   }
   # ])
   # rg4 = { for a in local.rg3 : a.key => a }
-  datargver1 =  flatten([for a, b in var.rg :
+  datargver1 = flatten([for a, b in var.rg :
     {
       name = try(b.existingrg, null)
       key  = a
