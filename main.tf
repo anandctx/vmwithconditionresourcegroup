@@ -9,6 +9,7 @@ module "vm" {
   rgname2 = module.rg[each.key].existrg
   # rgname2 = try( module.rg[each.key].rg15, null)
   #  rgname2 = module.rg[each.key].rg15
+  depends_on = [ module.rg ]
 
 
 
@@ -26,7 +27,7 @@ module "rg" {
   rg       = each.value
   location = each.key
   # rterrgid = azurerm
-
+subid = var.subid
 }
 
 # module "location" {

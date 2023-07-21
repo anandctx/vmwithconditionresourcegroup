@@ -43,48 +43,48 @@ virtual_machines = {
 
       }
     }
-    # iamvm02 = {
+    iamvm02 = {
 
-    #   id       = "t"
-    #   vmnumber = "02"
-    #   vmsize   = "Standard_B1s"
-    #   rg_key   = "rg02"
-    #   os_type  = "windows"
-    #   rgvalue  = "computeint-01"
-    #   # existingrg = "ibo-rg"
+      id       = "t"
+      vmnumber = "02"
+      vmsize   = "Standard_B1s"
+      rg_key   = "rg02"
+      os_type  = "windows"
+      rgvalue  = "ad-01"
+      # existingrg = "ibo-rg"
 
-    #   os_disk = {
-    #     disk_size_gb         = 40
-    #     caching              = "ReadWrite"
-    #     storage_account_type = "Standard_LRS"
-    #   }
+      os_disk = {
+        disk_size_gb         = 40
+        caching              = "ReadWrite"
+        storage_account_type = "Standard_LRS"
+      }
 
-    #   source_image_reference = {
-    #     publisher = "MicrosoftWindowsServer"
-    #     offer     = "windowsserver"
-    #     sku       = "2016-Datacenter-gensecond"
-    #     version   = "14393.6085.230705"
-    #   }
-
-
-    #   rgname   = "ibo-rg"
-    #   vnetname = "ibo-01-vnet"
-
-    #   networking_interfaces = {
-    #     nic01 = {
-    #       subnetname = "ibo-01-subnet"
-    #       #dns_servers = []
-    #     }
-
-    #     #     # nic02 = {
-    #     #     #   subnetname = "ibo-01-subnet"
-    #     #     #   #dns_servers = []
-    #     #     # }
+      source_image_reference = {
+        publisher = "MicrosoftWindowsServer"
+        offer     = "windowsserver"
+        sku       = "2016-Datacenter-gensecond"
+        version   = "14393.6085.230705"
+      }
 
 
+      rgname   = "ibo-rg"
+      vnetname = "ibo-01-vnet"
 
-    #   }
-    # }
+      networking_interfaces = {
+        nic01 = {
+          subnetname = "ibo-01-subnet"
+          #dns_servers = []
+        }
+
+        #     # nic02 = {
+        #     #   subnetname = "ibo-01-subnet"
+        #     #   #dns_servers = []
+        #     # }
+
+
+
+      }
+    }
     # iamvm03 = {
 
     #   id       = "t"
@@ -92,7 +92,7 @@ virtual_machines = {
     #   vmsize   = "Standard_B1s"
     #   rg_key   = "rg01"
     #   os_type  = "windows"
-    #   rgvalue  = "ibo-rg1"
+    #   rgvalue  = "computeext-01"
     #   # existingrg = "ibo-rg1"
     #   # zone = "1"
 
@@ -261,6 +261,7 @@ virtual_machines = {
   #   }
   # }
 }
+subid = "6e54aa79-9b0b-40ed-ae27-91fdffa0a565"
 
 resgrp = {
 
@@ -269,14 +270,14 @@ resgrp = {
       name = "computeint-01"
       # existingrg = "ibo-rg"
     }
-    # rg02 = {
-    #   name = "ad-01"
-    #   # existingrg = "ibo-rg"
-    # }
-    # rg03 = {
-    #   # name = "computeext-01"
-    #   existingrg = "ibo-rg1"
-    # }
+    rg02 = {
+      name = "ad-01"
+      # existingrg = "ibo-rg"
+    }
+    rg03 = {
+      name = "computeext-01"
+      # existingrg = "ibo-rg1"
+    }
   }
   # germanywestcentral = {
   #   rg01 = {
