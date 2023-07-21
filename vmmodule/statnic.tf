@@ -8,7 +8,7 @@ resource "azapi_update_resource" "nic_to_static" {
     "properties" : {
       "ipConfigurations" : [
         {
-          "name" : "internal"
+          "name" : "${each.value.nicname}",
           "properties" : {
             "privateIPAddress" : "${azurerm_network_interface.nic[each.key].private_ip_addresses[0]}",
             "privateIPAllocationMethod" : "Static",
@@ -22,9 +22,9 @@ resource "azapi_update_resource" "nic_to_static" {
     "location" : local.location
   })
 
-  lifecycle {
-    ignore_changes = all
-  }
+  # lifecycle {
+  #   ignore_changes = all
+  # }
 
 
 

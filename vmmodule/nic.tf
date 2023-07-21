@@ -5,7 +5,7 @@ resource "azurerm_network_interface" "nic" {
   resource_group_name = try(each.value.vmrg, each.value.vmdatarg)
 
   ip_configuration {
-    name                          = "internal"
+    name                          = each.value.nicname
     subnet_id                     = data.azurerm_subnet.subnet[each.key].id
     private_ip_address_allocation = "Dynamic"
     # private_ip_address = "${azurerm_network_interface.nic[each.key].private_ip_addresses[0]}"
